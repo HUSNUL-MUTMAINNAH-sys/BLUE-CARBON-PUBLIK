@@ -1,0 +1,68 @@
+// DEMO COORDINATES
+// Replace with verified field coordinates once ground-truth GPS survey is complete.
+// Approximate area: Kelurahan Lembang, Kecamatan Bantaeng, Sulawesi Selatan.
+
+const locations = [
+  {
+    id: 1,
+    number: '01',
+    name: 'Pesisir Utara',
+    kelurahan: 'Kelurahan Lembang',
+    kecamatan: 'Kecamatan Bantaeng',
+    coordinates: [-5.552, 119.952],
+    area: '0,75 ha',
+    areaValue: 0.75,
+    farmers: 1,
+    cycle: 2,
+    status: 'Aktif',
+    photoVariant: 'north',
+    description: 'Area budidaya rumput laut di sisi utara pesisir, berdekataan dengan permukiman nelayan dan akses jalan utama.',
+  },
+  {
+    id: 2,
+    number: '02',
+    name: 'Pesisir Tengah',
+    kelurahan: 'Kelurahan Lembang',
+    kecamatan: 'Kecamatan Bantaeng',
+    coordinates: [-5.560, 119.960],
+    area: '0,50 ha',
+    areaValue: 0.50,
+    farmers: 3,
+    cycle: 1,
+    status: 'Aktif',
+    photoVariant: 'central',
+    description: 'Lokasi budidaya di bagian tengah garis pantai dengan kedalaman ideal untuk pertumbuhan rumput laut.',
+  },
+  {
+    id: 3,
+    number: '03',
+    name: 'Pesisir Selatan',
+    kelurahan: 'Kelurahan Lembang',
+    kecamatan: 'Kecamatan Bantaeng',
+    coordinates: [-5.569, 119.967],
+    area: '1,25 ha',
+    areaValue: 1.25,
+    farmers: 2,
+    cycle: 2,
+    status: 'Aktif',
+    photoVariant: 'south',
+    description: 'Area terluas dengan kondisi perairan yang stabil dan produktivitas tinggi.',
+  },
+  {
+    id: 4,
+    number: '04',
+    name: 'Teluk Lembang',
+    kelurahan: 'Kelurahan Lembang',
+    kecamatan: 'Kecamatan Bantaeng',
+    coordinates: [-5.545, 119.945],
+    area: '0,60 ha',
+    areaValue: 0.60,
+    farmers: 1,
+    cycle: 1,
+    status: 'Dalam Pendataan',
+    photoVariant: 'bay',
+    description: 'Lokasi baru yang sedang dalam proses verifikasi dan pengumpulan data baseline.',
+  },
+];
+
+export default locations;

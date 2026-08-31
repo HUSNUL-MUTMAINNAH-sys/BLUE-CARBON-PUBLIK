@@ -66,3 +66,4 @@ Web ini **TIDAK memiliki** fitur CRUD. Hanya menampilkan data (READ only).
 ## Deploy
 
 Website ini dapat di-deploy ke GitHub Pages atau hosting statis lainnya.
+# BLUE-CARBON-PUBLIK

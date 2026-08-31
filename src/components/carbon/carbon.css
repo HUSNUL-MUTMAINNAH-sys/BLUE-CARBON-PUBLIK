@@ -1,0 +1,35 @@
+.carbon-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.carbon-metric-card { padding: 22px; }
+.carbon-metric-label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+.carbon-metric-value { font-family: var(--font-heading); font-size: 26px; color: var(--ink); }
+
+.carbon-disclaimer {
+  border-left: 3px solid var(--accent-teal);
+  padding: 14px 18px;
+  background: rgba(28, 140, 134,0.06);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 13.5px;
+  color: var(--muted);
+  margin-bottom: 32px;
+}
+
+.carbon-chart-card, .methodology-panel { padding: 26px; }
+.carbon-chart-card h4, .methodology-panel h4 { color: var(--ink); font-size: 16px; margin-bottom: 18px; font-family: var(--font-heading); font-weight: 400; }
+
+.methodology-panel ul { list-style: none; margin: 0 0 18px; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.methodology-panel li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--ink); }
+.methodology-panel .check {
+  width: 20px; height: 20px; border-radius: 50%;
+  background: rgba(28, 140, 134,0.15); color: var(--accent-teal);
+  display: flex; align-items: center; justify-content: center; font-size: 11px; flex-shrink: 0;
+}
+.methodology-link { color: var(--accent-teal); font-size: 13.5px; font-weight: 600; }
+
+@media (max-width: 900px) {
+  .carbon-metrics { grid-template-columns: 1fr 1fr; }
+}

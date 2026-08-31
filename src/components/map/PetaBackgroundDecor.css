@@ -1,0 +1,144 @@
+/*
+  Scoped ONLY to .peta-ocean-bg (applied to Peta.jsx's PageContainer).
+  Does not touch any global/shared selectors (.page-container, .page-section,
+  .container, navbar, map, cards, etc.) so no other page or component is
+  affected.
+*/
+
+.peta-ocean-bg {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse 900px 520px at 88% 6%, rgba(28, 140, 134, 0.10), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 4% 92%, rgba(28, 140, 134, 0.07), transparent 55%),
+    radial-gradient(ellipse 1000px 600px at 50% 40%, rgba(207, 226, 239, 0.55), transparent 65%),
+    linear-gradient(180deg, #E4EEF7 0%, #EDF4FA 42%, #E7F1F9 78%, #E4EEF7 100%);
+}
+
+/* keep existing content above the decoration layer without altering
+   the shared .page-section rule globally (loading state uses an inline
+   style for the same purpose, see Peta.jsx) */
+.peta-ocean-bg > .page-section {
+  position: relative;
+  z-index: 1;
+}
+
+.peta-decor {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* soft atmospheric glows */
+.peta-decor__glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+}
+.peta-decor__glow--1 {
+  top: -120px;
+  right: -80px;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(28, 140, 134, 0.14), transparent 70%);
+}
+.peta-decor__glow--2 {
+  bottom: -160px;
+  right: -100px;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(28, 140, 134, 0.10), transparent 70%);
+}
+.peta-decor__glow--3 {
+  bottom: 10%;
+  left: -140px;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(143, 191, 214, 0.20), transparent 70%);
+}
+
+/* seaweed ornaments */
+.peta-decor__seaweed {
+  position: absolute;
+  color: rgba(143, 191, 214, 0.45);
+  width: 150px;
+  height: auto;
+}
+.peta-decor__seaweed--tr {
+  top: -10px;
+  right: 3%;
+  width: 130px;
+  color: rgba(143, 191, 214, 0.5);
+}
+.peta-decor__seaweed--br {
+  bottom: -30px;
+  right: 2%;
+  width: 190px;
+  transform: scaleX(-1);
+  color: rgba(143, 191, 214, 0.35);
+}
+.peta-decor__seaweed--bl {
+  bottom: -20px;
+  left: 1%;
+  width: 120px;
+  color: rgba(143, 191, 214, 0.28);
+}
+
+/* dotted map path with pins, top-right hero area */
+.peta-decor__mappath {
+  position: absolute;
+  top: 6px;
+  right: 5%;
+  width: 210px;
+  height: auto;
+  color: rgba(28, 140, 134, 0.5);
+}
+
+/* wave lines along the bottom */
+.peta-decor__waves {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  width: 100%;
+  height: 180px;
+  color: rgba(143, 191, 214, 0.55);
+}
+
+/* faint scattered coordinate dots for a mapping feel */
+.peta-decor__dots {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  opacity: 0.5;
+  background-image: radial-gradient(rgba(28, 140, 134, 0.35) 1px, transparent 1.4px);
+  background-size: 26px 26px;
+  -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 0.6) 0%, transparent 70%);
+  mask-image: radial-gradient(circle, rgba(0, 0, 0, 0.6) 0%, transparent 70%);
+}
+.peta-decor__dots--1 {
+  top: 18%;
+  left: 6%;
+}
+.peta-decor__dots--2 {
+  bottom: 6%;
+  right: 20%;
+}
+
+@media (max-width: 768px) {
+  .peta-decor__seaweed {
+    width: 90px;
+  }
+  .peta-decor__seaweed--br {
+    width: 130px;
+  }
+  .peta-decor__mappath {
+    width: 140px;
+  }
+  .peta-decor__dots {
+    display: none;
+  }
+}

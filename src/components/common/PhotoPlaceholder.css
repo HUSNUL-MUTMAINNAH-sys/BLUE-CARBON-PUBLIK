@@ -1,0 +1,39 @@
+.photo-placeholder {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--dark-ocean);
+}
+
+.photo-placeholder svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.photo-placeholder__badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: rgba(6, 42, 48, 0.7);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 3px 9px;
+  backdrop-filter: blur(6px);
+}
+
+.photo-placeholder__label {
+  position: absolute;
+  left: 12px;
+  bottom: 10px;
+  font-size: 12px;
+  color: var(--pure-white);
+  font-weight: 500;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
