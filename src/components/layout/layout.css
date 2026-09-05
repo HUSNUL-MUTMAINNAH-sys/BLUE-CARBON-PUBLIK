@@ -105,6 +105,36 @@
   .navbar-burger { display: flex; }
 }
 
+@media (max-width: 768px) {
+  .navbar-inner {
+    height: 70px;
+  }
+  .navbar-brand {
+    gap: 10px;
+  }
+  .brand-mark img { 
+    width: 36px; 
+    height: 36px; 
+  }
+  .brand-text strong { 
+    font-size: 13px; 
+  }
+  .brand-text small { 
+    font-size: 8px; 
+    margin-top: 2px;
+  }
+  .navbar-burger { 
+    width: 22px; 
+  }
+  .navbar-burger span {
+    height: 2px;
+  }
+  .nav-link { 
+    font-size: 13px; 
+    padding: 12px 0;
+  }
+}
+
 /* Footer */
 .footer {
   background: var(--ocean);
@@ -133,7 +163,31 @@
 }
 
 @media (max-width: 768px) {
-  .footer-grid { grid-template-columns: 1fr; }
+  .footer {
+    padding: 40px 0 20px;
+  }
+  .footer-grid { 
+    grid-template-columns: 1fr; 
+    gap: 24px;
+    padding-bottom: 24px;
+  }
+  .footer-brand strong { 
+    font-size: 16px; 
+    margin-bottom: 6px; 
+  }
+  .footer-col h4 { 
+    font-size: 12px; 
+    margin-bottom: 12px; 
+  }
+  .footer-col a, .footer-col p { 
+    font-size: 13px; 
+    margin-bottom: 8px; 
+  }
+  .footer-bottom {
+    font-size: 11px;
+    gap: 8px;
+    padding-top: 16px;
+  }
 }
 
 /* PageContainer */

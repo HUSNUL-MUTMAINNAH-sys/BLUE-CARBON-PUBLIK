@@ -24,6 +24,84 @@
   }
 }
 
+@media (max-width: 768px) {
+  .map-page__layout {
+    gap: 16px;
+  }
+  .map-page__map {
+    height: 360px;
+  }
+
+  .location-timeline {
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .location-timeline__arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  .location-timeline__track {
+    gap: 8px;
+    padding: 2px;
+  }
+
+  .location-timeline__item {
+    padding: 6px;
+    border-radius: 8px;
+    min-width: 180px;
+    gap: 8px;
+  }
+
+  .location-timeline__thumb {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+  }
+
+  .location-timeline__number {
+    font-size: 11px;
+  }
+
+  .location-timeline__name {
+    font-size: 12px;
+  }
+
+  .location-timeline__area {
+    font-size: 10px;
+  }
+
+  .location-timeline__play {
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 11px;
+  }
+
+  .peta-search-section {
+    gap: 10px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  .peta-search-input {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  .peta-filter-select {
+    padding: 10px 14px;
+    font-size: 13px;
+    min-width: 120px;
+  }
+
+  .peta-search-btn {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}
+
 .location-timeline {
   display: flex;
   align-items: center;
@@ -216,5 +294,15 @@
   .peta-filter-select,
   .peta-search-btn {
     min-width: 100%;
+  }
+
+  .location-timeline {
+    flex-wrap: wrap;
+  }
+
+  .location-timeline__play {
+    order: 4;
+    width: 100%;
+    justify-content: center;
   }
 }

@@ -213,3 +213,51 @@
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
   animation: shine 3s ease-in-out infinite;
 }
+
+
+/* Mobile Responsive Media Queries */
+@media (max-width: 768px) {
+  .btn-md { 
+    padding: 11px 18px; 
+    font-size: 12px; 
+  }
+  .btn-sm { 
+    padding: 8px 14px; 
+    font-size: 12px; 
+  }
+  .section-header { 
+    margin-bottom: 20px; 
+  }
+  .section-header h2 {
+    font-size: clamp(18px, 2.5vw, 24px);
+    margin-top: 6px;
+  }
+  .section-header p { 
+    margin-top: 8px; 
+    font-size: 14px;
+  }
+  .modal-overlay {
+    padding: 16px;
+  }
+  .modal-content {
+    max-height: 85vh;
+  }
+  .modal-close {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+  .state-block {
+    padding: 40px 16px;
+    gap: 10px;
+  }
+  .spinner {
+    width: 28px;
+    height: 28px;
+    border-width: 2px;
+  }
+  .state-icon {
+    width: 40px;
+    height: 40px;
+  }
+}

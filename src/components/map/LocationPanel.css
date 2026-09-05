@@ -67,3 +67,38 @@
   width: 100%;
   justify-content: center;
 }
+
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .location-panel {
+    padding: 16px;
+  }
+  .location-panel__title {
+    font-size: 18px;
+    margin-top: 8px;
+  }
+  .location-panel__breadcrumb {
+    font-size: 11px;
+    margin-top: 4px;
+  }
+  .location-panel__photo {
+    margin-top: 12px;
+    aspect-ratio: 16 / 10;
+  }
+  .location-panel__desc {
+    margin-top: 10px;
+    font-size: 12px;
+  }
+  .location-panel__stats {
+    gap: 10px;
+    margin-top: 12px;
+    padding-top: 12px;
+  }
+  .location-panel__stats strong {
+    font-size: 13px;
+  }
+  .location-panel__cta {
+    margin-top: 12px;
+  }
+}

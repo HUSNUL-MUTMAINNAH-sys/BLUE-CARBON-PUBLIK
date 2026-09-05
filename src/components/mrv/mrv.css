@@ -39,8 +39,66 @@
 }
 
 @media (max-width: 768px) {
-  .mrv-timeline { flex-direction: column; gap: 24px; }
+  .mrv-timeline { 
+    flex-direction: column; 
+    gap: 24px;
+    padding: 8px 0 16px;
+  }
+  .mrv-step {
+    min-width: auto;
+    flex: none;
+  }
+  .mrv-step-circle {
+    width: 38px;
+    height: 38px;
+    font-size: 12px;
+  }
+  .mrv-step-body { 
+    padding-left: 12px; 
+    padding-right: 10px;
+  }
+  .mrv-step-body strong { 
+    font-size: 13px; 
+    margin-bottom: 3px;
+  }
+  .mrv-step-body p { 
+    font-size: 12px; 
+  }
   .mrv-step-connector { display: none; }
+  
+  .activity-list li {
+    gap: 10px;
+    padding: 10px 0;
+  }
+  .activity-dot {
+    margin-top: 5px;
+  }
+  .activity-list strong { 
+    font-size: 12.5px; 
+  }
+  .activity-time { 
+    font-size: 11px; 
+  }
+  
+  .doc-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  
+  .coverage-donut {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 12px;
+  }
+  .coverage-donut-inner {
+    width: 78px;
+    height: 78px;
+    font-size: 16px;
+  }
+  .coverage-legend { 
+    gap: 6px; 
+    font-size: 12px;
+  }
 }
 
 /* Activity list */

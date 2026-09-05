@@ -279,3 +279,78 @@
   .map-timeline-wrap { left: 12px; right: 12px; bottom: 12px; }
   .timeline-item { min-width: 120px; }
 }
+
+@media (max-width: 768px) {
+  .map-side-panel {
+    width: auto;
+    padding: 16px;
+    max-height: 35%;
+  }
+  .map-side-panel h3 { 
+    font-size: 18px; 
+    margin: 6px 0 2px;
+  }
+  .map-side-panel .panel-sub { 
+    font-size: 12px; 
+    margin-bottom: 10px;
+  }
+  .panel-photo {
+    height: 110px;
+    margin-bottom: 12px;
+  }
+  .panel-stats { 
+    gap: 10px; 
+    margin-bottom: 12px;
+  }
+  .panel-stat-value { 
+    font-size: 14px; 
+  }
+  .map-control-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+  .map-search-filter {
+    left: 12px;
+    right: 12px;
+    top: 12px;
+    gap: 8px;
+  }
+  .map-search-input, .map-filter-select {
+    padding: 9px 14px;
+    font-size: 12px;
+  }
+  .map-timeline-wrap {
+    padding: 12px 12px;
+    gap: 10px;
+  }
+  .timeline-scroll {
+    gap: 8px;
+    padding: 2px;
+  }
+  .timeline-item {
+    padding: 7px 12px;
+    min-width: 100px;
+    font-size: 12px;
+  }
+  .timeline-num {
+    font-size: 10px;
+    width: 18px;
+  }
+  .timeline-info strong { 
+    font-size: 11px; 
+  }
+  .timeline-info span { 
+    font-size: 10px; 
+  }
+  .timeline-arrow {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+  .autoplay-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 12px;
+  }
+}
