@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import L from 'leaflet';
 import {
   ArrowLeft,
   User,
@@ -25,6 +26,21 @@ import LoadingState from '../components/common/LoadingState';
 import Badge from '../components/common/Badge';
 import { getLahanById, getAllMonitoring, formatRupiah } from '../services/api';
 import './DetailLahan.css';
+
+// Buat custom marker icon menggunakan divIcon
+function buildDetailMarkerIcon() {
+  const html = `
+    <div class="map-marker map-marker--detail">
+      <span class="map-marker__label">📍</span>
+    </div>
+  `;
+  return L.divIcon({
+    html,
+    className: 'map-marker-wrapper',
+    iconSize: [40, 40],
+    iconAnchor: [20, 20],
+  });
+}
 
 // Format siklus panen menjadi "{nilai} x setahun", contoh: 2 -> "2 x setahun"
 function formatSiklusPanen(nilai) {
@@ -199,7 +215,10 @@ export default function DetailLahan() {
                     url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
                     attribution="Tiles &copy; Esri"
                   />
-                  <Marker position={[lahan.latitude, lahan.longitude]}>
+                  <Marker 
+                    position={[lahan.latitude, lahan.longitude]}
+                    icon={buildDetailMarkerIcon()}
+                  >
                     <Popup>{lahan.lokasi}</Popup>
                   </Marker>
                 </MapContainer>
