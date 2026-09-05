@@ -108,6 +108,7 @@
 @media (max-width: 768px) {
   .navbar-inner {
     height: 70px;
+    padding: 0 16px;
   }
   .navbar-brand {
     gap: 10px;
@@ -117,14 +118,17 @@
     height: 36px; 
   }
   .brand-text strong { 
-    font-size: 13px; 
+    font-size: 12px;
+    font-weight: 500;
   }
   .brand-text small { 
-    font-size: 8px; 
-    margin-top: 2px;
+    font-size: 7.5px;
+    letter-spacing: 0.08em;
+    margin-top: 1px;
   }
   .navbar-burger { 
-    width: 22px; 
+    width: 22px;
+    gap: 4px;
   }
   .navbar-burger span {
     height: 2px;

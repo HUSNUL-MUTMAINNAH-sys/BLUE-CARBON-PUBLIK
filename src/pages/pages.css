@@ -181,54 +181,178 @@
 
 @media (max-width: 768px) {
   .hero {
-    min-height: auto;
-    padding: 80px 0 60px;
-  }
-  .hero-content { 
-    padding-top: 60px; 
-    padding-bottom: 60px; 
+    min-height: 100vh;
+    padding: 0;
+    display: flex;
     flex-direction: column;
-    gap: 24px;
   }
-  .hero-left { max-width: 100%; }
+  
+  .hero-slides {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  
+  .hero-slide {
+    background-size: cover;
+    background-position: center 30%;
+    animation: none;
+  }
+  
+  .hero-overlay {
+    background: linear-gradient(180deg, rgba(6, 42, 48, 0.4) 0%, rgba(6, 42, 48, 0.3) 50%, rgba(6, 42, 48, 0.6) 100%);
+  }
+  
+  .hero-content { 
+    position: relative;
+    z-index: 2;
+    padding: 40px 16px 40px 16px;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: flex-end;
+    min-height: 100vh;
+    display: flex;
+  }
+  
+  .hero-left { 
+    max-width: 100%;
+    order: 0;
+  }
+  
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent-teal);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  
   .hero-title {
-    font-size: clamp(28px, 5vw, 40px);
-    margin: 10px 0 16px;
+    font-size: clamp(32px, 7vw, 48px);
+    color: var(--white);
+    margin: 0 0 12px 0;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
   }
+  
   .hero-desc { 
-    font-size: 14px; 
-    margin-bottom: 20px; 
-  }
-  .hero-actions { 
-    gap: 12px;
-  }
-  .hero-right { 
-    width: 100%; 
-    padding: 20px;
-    order: -1;
-  }
-  .hero-stats-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  .hero-stat-icon {
-    width: 30px;
-    height: 30px;
-  }
-  .hero-stat-value { font-size: 18px; }
-  .hero-stat-value-sm { font-size: 14px; }
-  .location-nav-strip {
-    gap: 8px;
-    padding-bottom: 4px;
-  }
-  .location-nav-item {
-    padding: 10px 16px;
-    min-width: 160px;
     font-size: 13px;
+    line-height: 1.6;
+    max-width: 100%;
+    color: rgba(245, 247, 244, 0.85);
+    margin-bottom: 16px;
   }
-  .location-nav-num { font-size: 18px; }
-  .location-nav-info strong { font-size: 12px; }
-  .location-nav-info span { font-size: 10px; }
+  
+  .hero-actions { 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+  
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .hero-right { 
+    width: 100%;
+    max-width: 100%;
+    padding: 16px;
+    order: 1;
+    margin-bottom: 20px;
+    margin-top: 0;
+    background: var(--glass-bg);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+  }
+  
+  .hero-panel-label { 
+    font-size: 10px; 
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-teal);
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  
+  .hero-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 10px;
+  }
+  
+  .hero-stat-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .hero-stat-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    background: rgba(28, 140, 134, 0.15);
+    color: var(--accent-teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero-stat-text { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+  
+  .hero-stat-value { 
+    font-family: var(--font-heading);
+    font-size: 16px;
+    color: var(--ink);
+    line-height: 1.2;
+    font-weight: 600;
+  }
+  
+  .hero-stat-value-sm { 
+    font-size: 12px;
+  }
+  
+  .hero-stat-caption { 
+    font-size: 9px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 0px;
+  }
+  
+  .hero-dots {
+    position: absolute;
+    left: 50%;
+    bottom: 80px;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: 8px;
+  }
+  
+  .hero-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(245, 247, 244, 0.3);
+  }
+  
+  .hero-dot.active { 
+    background: var(--accent-teal);
+    width: 18px;
+    border-radius: 3px;
+  }
 }
 
 /* Berita Terbaru */
@@ -299,40 +423,88 @@
 
 @media (max-width: 768px) {
   .berita-section {
-    padding: 40px 0 56px;
+    padding: 40px 0 50px;
   }
   .berita-header {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     gap: 12px;
     margin-bottom: 20px;
   }
   .berita-header h2 {
-    font-size: clamp(18px, 2.5vw, 24px);
+    font-size: clamp(18px, 3vw, 24px);
+    margin: 0;
+  }
+  .berita-see-all {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent-teal);
+    white-space: nowrap;
   }
   .berita-list {
     gap: 12px;
   }
   .berita-card {
-    padding: 12px;
-    gap: 12px;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    gap: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    overflow: hidden;
+  }
+  .berita-card:hover {
+    border-color: transparent;
+    transform: none;
   }
   .berita-thumb {
-    flex: 0 0 auto;
-    width: 120px;
-    height: 100px;
+    flex: 1;
+    width: 100%;
+    height: 160px;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
   }
-  .berita-body h3 { 
-    font-size: 14px; 
-    margin-bottom: 4px;
+  .berita-thumb img { 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
-  .berita-body p { 
-    font-size: 12px; 
-    margin-bottom: 8px;
+  .berita-body { 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 12px 0 0 0;
+    gap: 6px;
   }
   .berita-date {
-    font-size: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: var(--accent-teal);
     margin-bottom: 4px;
+  }
+  .berita-body h3 { 
+    font-size: 15px;
+    color: var(--ink);
+    font-weight: 600;
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+  .berita-body p { 
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 8px;
+    max-width: 100%;
+  }
+  .berita-link { 
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent-teal);
   }
 }
 
