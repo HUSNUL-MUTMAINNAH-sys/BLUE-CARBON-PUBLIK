@@ -1,0 +1,107 @@
+.location-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.location-timeline__controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.location-timeline__arrow {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--dark-ocean);
+  color: var(--ink);
+}
+.location-timeline__arrow:hover {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+.location-timeline__track {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+  padding: 4px;
+}
+
+.location-timeline__item {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--dark-ocean);
+  width: 100%;
+}
+.location-timeline__item:hover {
+  border-color: var(--border-strong);
+}
+.location-timeline__item--active {
+  border-color: var(--teal);
+  background: rgba(28, 140, 134, 0.06);
+}
+
+.location-timeline__thumb {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.location-timeline__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+.location-timeline__number {
+  font-family: var(--font-display);
+  font-size: 13px;
+  color: var(--accent-teal);
+}
+.location-timeline__name {
+  font-size: 13px;
+  color: var(--ink);
+  font-weight: 500;
+}
+.location-timeline__area {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.location-timeline__play {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  color: var(--ink);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+.location-timeline__play--active {
+  background: var(--teal);
+  color: var(--deep-navy);
+  border-color: var(--teal);
+}
+
+@media (max-width: 720px) {
+  .location-timeline__track {
+    grid-template-columns: 1fr;
+  }
+}

@@ -38,8 +38,8 @@ export default function Berita() {
     if (!searchQuery) return true;
     const query = searchQuery.toLowerCase();
     return (
-      (item.judul && item.judul.toLowerCase().includes(query)) ||
-      (item.konten && item.konten.toLowerCase().includes(query)) ||
+      item.judul.toLowerCase().includes(query) ||
+      item.konten.toLowerCase().includes(query) ||
       (item.penulis && item.penulis.toLowerCase().includes(query)) ||
       (item.kategori && item.kategori.toLowerCase().includes(query))
     );
@@ -130,16 +130,14 @@ export default function Berita() {
                   )}
                   <div className="berita-card-content">
                     <div className="berita-card-meta">
-                      {item.kategori && (
-                        <span className={`berita-kategori kategori-${item.kategori.toLowerCase().replace(/\s+/g, '-')}`}>
-                          {item.kategori}
-                        </span>
-                      )}
+                      <span className={`berita-kategori kategori-${item.kategori.toLowerCase().replace(/\s+/g, '-')}`}>
+                        {item.kategori}
+                      </span>
                       <span className="berita-tanggal">{formatTanggal(item.tanggal)}</span>
                     </div>
                     <h3 className="berita-card-title">{item.judul}</h3>
                     <p className="berita-card-excerpt">
-                      {item.konten && item.konten.substring(0, 150)}...
+                      {item.konten.substring(0, 150)}...
                     </p>
                     <Link to={`/berita/${item.id}`} className="berita-card-link">
                       Baca Selengkapnya →

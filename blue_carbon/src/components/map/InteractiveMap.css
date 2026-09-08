@@ -1,0 +1,65 @@
+.interactive-map {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.interactive-map--fullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  border-radius: 0;
+}
+
+.map-marker-wrapper {
+  background: transparent !important;
+  border: none !important;
+}
+
+.map-marker {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--panel-bg);
+  border: 1.5px solid var(--accent-teal);
+  color: var(--accent-teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  opacity: 0.75;
+  cursor: pointer;
+  transition: opacity var(--dur-fast) var(--ease-standard);
+}
+
+.map-marker--active {
+  opacity: 1;
+  background: var(--teal);
+  color: var(--deep-navy);
+  border-color: var(--teal);
+  font-size: 13px;
+  box-shadow: 0 0 0 4px rgba(28, 140, 134, 0.18);
+}
+
+.map-marker__pulse {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 1.5px solid var(--teal);
+  animation: markerPulse 1.8s var(--ease-standard) infinite;
+}
+
+@keyframes markerPulse {
+  0% { transform: scale(0.7); opacity: 0.6; }
+  100% { transform: scale(1.35); opacity: 0; }
+}
+
+.map-marker__label {
+  position: relative;
+  z-index: 1;
+}

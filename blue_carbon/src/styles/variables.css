@@ -1,0 +1,55 @@
+:root {
+  /* THEME: Powder Blue + Deep Teal (light) */
+  --deep-navy: #E4EEF7;    /* main page background — powder blue */
+  --ocean: #EDF4FA;        /* section / secondary background — soft light blue */
+  --dark-teal: #0E5F62;    /* mid teal — scrollbar thumb, darker hover states */
+  --teal-panel: #FFFFFF;   /* card / panel / popup background — white */
+  --accent-teal: #1C8C86;  /* primary interactive teal — buttons, links, icons */
+  --accent-teal-2: #2FD1C7;/* soft cyan/turquoise accent */
+  --light-teal: #8FE0DB;   /* light teal tint for glows/highlights */
+  --white: #F7FBFD;        /* light text — ONLY for text sitting directly on the
+                               dark-overlaid hero photos (kept its original light
+                               role so any usage not touched by this pass stays
+                               correct). Card/panel text uses --ink instead. */
+  --ink: #0E4750;          /* primary heading / important text — deep teal, for
+                               use on light card/panel/page backgrounds */
+  --muted: #5D7A8A;        /* secondary / muted body text — blue-grey */
+
+  --font-heading: 'DM Serif Display', Georgia, serif;
+  --font-body: 'Manrope', 'Inter', sans-serif;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+
+  --ease-cinematic: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 300ms;
+  --dur-med: 500ms;
+  --dur-slow: 800ms;
+
+  /* Dark gradient overlays used ONLY on top of photographic hero images,
+     for text legibility — tinted deep teal instead of navy/black. */
+  --overlay-dark: rgba(6, 42, 48, 0.55);
+  --overlay-darker: rgba(5, 33, 38, 0.78);
+
+  --border-subtle: rgba(14, 71, 80, 0.14);
+  --glass-bg: rgba(255, 255, 255, 0.7);
+
+  /* True white, for the rare case that needs literal white regardless of
+     theme (e.g. a ring around a map marker sitting on photographic map tiles). */
+  --pure-white: #FFFFFF;
+
+  /* Aliases so map components (ported from the reference build) resolve
+     against this theme's palette instead of rendering with missing colors. */
+  --border: var(--border-subtle);
+  --border-strong: rgba(14, 71, 80, 0.24);
+  --panel-bg: var(--glass-bg);
+  --dark-ocean: var(--ocean);
+  --teal: var(--accent-teal);
+  --soft-teal: var(--light-teal);
+  --font-display: var(--font-heading);
+  --ease-standard: var(--ease-cinematic);
+  /* Referenced by DetailLahan.css but never previously defined (fell back
+     to inherited text color by accident) — now an explicit alias. */
+  --text-light: var(--muted);
+}
