@@ -181,7 +181,7 @@ export default function DetailLahan() {
               </div>
               <div className="stat-body">
                 <div className="stat-label">Luas Area</div>
-                <div className="stat-value">{lahan.luas.toFixed(2)} ha</div>
+                <div className="stat-value">{(lahan.luas * 10000).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, '.')} m²</div>
               </div>
             </div>
             <div className="detail-stat-card">

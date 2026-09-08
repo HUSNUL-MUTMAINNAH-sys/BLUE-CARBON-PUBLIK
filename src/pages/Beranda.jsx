@@ -271,8 +271,8 @@ export default function Beranda() {
                   >
                     <span className="hero-stat-icon"><IconLeaf /></span>
                     <span className="hero-stat-text">
-                      <span className="hero-stat-value">{totalArea.toFixed(1).replace('.', ',')} ha</span>
-                      <span className="hero-stat-caption">Luas Area</span>
+                      <span className="hero-stat-value">{(totalArea * 10000).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, '.')}</span>
+                      <span className="hero-stat-caption">Luas Area (m²)</span>
                     </span>
                   </motion.div>
                   <motion.div
