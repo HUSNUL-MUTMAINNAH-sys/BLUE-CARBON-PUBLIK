@@ -25,7 +25,7 @@ const BERITA_FALLBACK = [
     id: 1,
     image: aerial,
     date: '21 Mei 2026',
-    title: 'Pendataan Pembudidaya Rumput Laut di Tamalange',
+    title: 'Pendataan Pembudidaya Rumput Laut di Tamalangnge',
     desc: 'Kegiatan pendataan pembudidaya rumput laut untuk memperbarui data produksi dan kondisi lapangan.',
   },
   {
