@@ -61,9 +61,11 @@ export default function DetailBerita() {
             transition={{ duration: 0.5 }}
           >
             <div className="berita-detail-header">
-              <span className={`berita-kategori kategori-${berita.kategori.toLowerCase().replace(/\s+/g, '-')}`}>
-                {berita.kategori}
-              </span>
+              {berita.kategori && (
+                <span className={`berita-kategori kategori-${berita.kategori.toLowerCase().replace(/\s+/g, '-')}`}>
+                  {berita.kategori}
+                </span>
+              )}
               <h1 className="berita-detail-title">{berita.judul}</h1>
               <div className="berita-detail-meta">
                 <span className="berita-tanggal">{formatTanggal(berita.tanggal)}</span>
