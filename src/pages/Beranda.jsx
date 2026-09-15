@@ -1,12 +1,9 @@
 import { useState, useCallback, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { slideLeft, slideRight, staggerContainer, staggerItem } from '../utils/animations';
+import { slideLeft, staggerContainer, staggerItem } from '../utils/animations';
 import PageContainer from '../components/layout/PageContainer';
 import Button from '../components/common/Button';
-import LoadingState from '../components/common/LoadingState';
-import useLocations from '../hooks/useLocations';
-import useAutoPlay from '../hooks/useAutoPlay';
 import { getPublishedBerita } from '../services/api';
 import aerial from '../assets/images/hero/aerial-coastal.png';
 import underwater from '../assets/images/mrv/underwater-seaweed.png';
@@ -44,33 +41,6 @@ const BERITA_FALLBACK = [
   },
 ];
 
-function IconTarget() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-      <circle cx="10" cy="10" r="7" stroke="currentColor" strokeWidth="1.4" />
-      <circle cx="10" cy="10" r="3.4" stroke="currentColor" strokeWidth="1.4" />
-      <circle cx="10" cy="10" r="1" fill="currentColor" />
-    </svg>
-  );
-}
-function IconLeaf() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-      <path d="M4 16C4 8 10 4 17 4C17 11 13 16 6 16H4Z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" />
-      <path d="M4 16C7 12 10 9 15 6" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
-    </svg>
-  );
-}
-function IconUsers() {
-  return (
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-      <circle cx="7.5" cy="7" r="2.6" stroke="currentColor" strokeWidth="1.4" />
-      <path d="M2.5 16c0-2.8 2.2-4.6 5-4.6s5 1.8 5 4.6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-      <circle cx="14" cy="7.6" r="2.1" stroke="currentColor" strokeWidth="1.2" />
-      <path d="M12.6 11.6c2.2.2 3.9 1.8 3.9 4.4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
-    </svg>
-  );
-}
 function IconCalendar() {
   return (
     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -94,7 +64,6 @@ function truncate(text, max = 140) {
 
 export default function Beranda() {
   const navigate = useNavigate();
-  const { loading, totalArea, totalFarmers, totalPoints } = useLocations();
   const [slide, setSlide] = useState(0);
   const [berita, setBerita] = useState(BERITA_FALLBACK);
   const [beritaLoading, setBeritaLoading] = useState(true);
@@ -136,13 +105,6 @@ export default function Beranda() {
   }, []);
   const goPrev = useCallback(() => {
     setSlide((s) => (s - 1 + SLIDES.length) % SLIDES.length);
-  }, []);
-
-  const autoPlay = useAutoPlay(goNext, 5500);
-  useEffect(() => {
-    autoPlay.start();
-    return () => autoPlay.stop();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -235,6 +197,7 @@ export default function Beranda() {
             initial="hidden"
             animate="visible"
             variants={slideRight}
+            style={{ display: 'none' }}
           >
             {loading ? (
               <div style={{ padding: '2rem', textAlign: 'center' }}>
