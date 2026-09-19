@@ -4,16 +4,23 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { slideLeft, staggerContainer, staggerItem } from '../utils/animations';
 import PageContainer from '../components/layout/PageContainer';
 import Button from '../components/common/Button';
+import useAutoPlay from '../hooks/useAutoPlay';
 import { getPublishedBerita } from '../services/api';
-import aerial from '../assets/images/hero/aerial-coastal.png';
-import underwater from '../assets/images/mrv/underwater-seaweed.png';
-import underwaterAlt from '../assets/images/backgrounds/underwater-alt.png';
+import slide1 from '../assets/images/hero/blue-carbon/1-sunset-dermaga.jpg';
+import slide2 from '../assets/images/hero/blue-carbon/2-tim-rumput-laut.jpg';
+import slide3 from '../assets/images/hero/blue-carbon/3-udara-perahu.jpg';
+import slide4 from '../assets/images/hero/blue-carbon/4-aktivitas-budidaya.jpg';
+import slide5 from '../assets/images/hero/blue-carbon/5-pengeringan-rumput.jpg';
+import slide6 from '../assets/images/hero/blue-carbon/6-area-pengeringan.jpg';
 import './pages.css';
 
 const SLIDES = [
-  { src: aerial, alt: 'Budidaya rumput laut di perairan Kelurahan Lembang' },
-  { src: underwater, alt: 'Pemantauan bawah air area budidaya rumput laut' },
-  { src: underwaterAlt, alt: 'Tali bentangan budidaya rumput laut di pesisir' },
+  { src: slide1, alt: 'Sunset dan aktivitas masyarakat di dermaga' },
+  { src: slide2, alt: 'Tim di tepi laut dengan hamparan rumput laut' },
+  { src: slide3, alt: 'Foto udara perahu-perahu di laut' },
+  { src: slide4, alt: 'Aktivitas pembudidaya dan hamparan rumput laut' },
+  { src: slide5, alt: 'Aktivitas pembudidaya di area pengeringan' },
+  { src: slide6, alt: 'Area pengeringan dengan aktivitas masyarakat' },
 ];
 
 // Konten cadangan yang ditampilkan jika belum ada berita Publish dari Admin Panel
@@ -105,6 +112,13 @@ export default function Beranda() {
   }, []);
   const goPrev = useCallback(() => {
     setSlide((s) => (s - 1 + SLIDES.length) % SLIDES.length);
+  }, []);
+
+  const autoPlay = useAutoPlay(goNext, 5000);
+  useEffect(() => {
+    autoPlay.start();
+    return () => autoPlay.stop();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
