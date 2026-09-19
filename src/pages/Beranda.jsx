@@ -6,21 +6,17 @@ import PageContainer from '../components/layout/PageContainer';
 import Button from '../components/common/Button';
 import useAutoPlay from '../hooks/useAutoPlay';
 import { getPublishedBerita } from '../services/api';
-import slide1 from '../assets/images/hero/blue-carbon/1-sunset-dermaga.jpg';
-import slide2 from '../assets/images/hero/blue-carbon/2-tim-rumput-laut.jpg';
-import slide3 from '../assets/images/hero/blue-carbon/3-udara-perahu.jpg';
-import slide4 from '../assets/images/hero/blue-carbon/4-aktivitas-budidaya.jpg';
-import slide5 from '../assets/images/hero/blue-carbon/5-pengeringan-rumput.jpg';
-import slide6 from '../assets/images/hero/blue-carbon/6-area-pengeringan.jpg';
 import './pages.css';
 
+// Foto-foto Blue Carbon hero carousel
+// Path akan di-resolve saat runtime
 const SLIDES = [
-  { src: slide1, alt: 'Sunset dan aktivitas masyarakat di dermaga' },
-  { src: slide2, alt: 'Tim di tepi laut dengan hamparan rumput laut' },
-  { src: slide3, alt: 'Foto udara perahu-perahu di laut' },
-  { src: slide4, alt: 'Aktivitas pembudidaya dan hamparan rumput laut' },
-  { src: slide5, alt: 'Aktivitas pembudidaya di area pengeringan' },
-  { src: slide6, alt: 'Area pengeringan dengan aktivitas masyarakat' },
+  { src: '/src/assets/images/hero/blue-carbon/1-sunset-dermaga.jpg', alt: 'Sunset dan aktivitas masyarakat di dermaga' },
+  { src: '/src/assets/images/hero/blue-carbon/2-tim-rumput-laut.jpg', alt: 'Tim di tepi laut dengan hamparan rumput laut' },
+  { src: '/src/assets/images/hero/blue-carbon/3-udara-perahu.jpg', alt: 'Foto udara perahu-perahu di laut' },
+  { src: '/src/assets/images/hero/blue-carbon/4-aktivitas-budidaya.jpg', alt: 'Aktivitas pembudidaya dan hamparan rumput laut' },
+  { src: '/src/assets/images/hero/blue-carbon/5-pengeringan-rumput.jpg', alt: 'Aktivitas pembudidaya di area pengeringan' },
+  { src: '/src/assets/images/hero/blue-carbon/6-area-pengeringan.jpg', alt: 'Area pengeringan dengan aktivitas masyarakat' },
 ];
 
 // Konten cadangan yang ditampilkan jika belum ada berita Publish dari Admin Panel
