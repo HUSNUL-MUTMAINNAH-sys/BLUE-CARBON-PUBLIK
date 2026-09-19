@@ -8,15 +8,32 @@ import useAutoPlay from '../hooks/useAutoPlay';
 import { getPublishedBerita } from '../services/api';
 import './pages.css';
 
-// Placeholder images sementara sampai foto asli di-upload
-// Gunakan Unsplash untuk preview
+// Hero carousel slides - 6 foto Blue Carbon asli
 const SLIDES = [
-  { src: 'https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=1200&h=600&fit=crop', alt: 'Sunset dan aktivitas masyarakat di dermaga' },
-  { src: 'https://images.unsplash.com/photo-1445531250444-715f4325eb24?w=1200&h=600&fit=crop', alt: 'Tim di tepi laut dengan hamparan rumput laut' },
-  { src: 'https://images.unsplash.com/photo-1439405326854-014607f694d7?w=1200&h=600&fit=crop', alt: 'Foto udara perahu-perahu di laut' },
-  { src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=600&fit=crop', alt: 'Aktivitas pembudidaya dan hamparan rumput laut' },
-  { src: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=600&fit=crop', alt: 'Aktivitas pembudidaya di area pengeringan' },
-  { src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=600&fit=crop', alt: 'Area pengeringan dengan aktivitas masyarakat' },
+  { 
+    src: new URL('../assets/images/hero/blue-carbon/1-sunset-dermaga.jpg', import.meta.url).href,
+    alt: 'Sunset dan aktivitas masyarakat di dermaga' 
+  },
+  { 
+    src: new URL('../assets/images/hero/blue-carbon/2-tim-rumput-laut.jpg', import.meta.url).href,
+    alt: 'Tim di tepi laut dengan hamparan rumput laut' 
+  },
+  { 
+    src: new URL('../assets/images/hero/blue-carbon/3-udara-perahu.jpg', import.meta.url).href,
+    alt: 'Foto udara perahu-perahu di laut' 
+  },
+  { 
+    src: new URL('../assets/images/hero/blue-carbon/4-aktivitas-budidaya.jpg', import.meta.url).href,
+    alt: 'Aktivitas pembudidaya dan hamparan rumput laut' 
+  },
+  { 
+    src: new URL('../assets/images/hero/blue-carbon/5-pengeringan-rumput.jpg', import.meta.url).href,
+    alt: 'Aktivitas pembudidaya di area pengeringan' 
+  },
+  { 
+    src: new URL('../assets/images/hero/blue-carbon/6-area-pengeringan.jpg', import.meta.url).href,
+    alt: 'Area pengeringan dengan aktivitas masyarakat' 
+  },
 ];
 
 // Konten cadangan yang ditampilkan jika belum ada berita Publish dari Admin Panel
