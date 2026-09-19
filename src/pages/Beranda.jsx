@@ -23,21 +23,21 @@ const SLIDES = [
 const BERITA_FALLBACK = [
   {
     id: 1,
-    image: aerial,
+    image: 'https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=800',
     date: '21 Mei 2026',
     title: 'Pendataan Pembudidaya Rumput Laut di Tamalangnge',
     desc: 'Kegiatan pendataan pembudidaya rumput laut untuk memperbarui data produksi dan kondisi lapangan.',
   },
   {
     id: 2,
-    image: underwater,
+    image: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800',
     date: '18 Mei 2026',
     title: 'Pembaruan Data Potensi Budidaya Rumput Laut',
     desc: 'Update data potensi dan sebaran lokasi budidaya rumput laut di Kelurahan Lembang.',
   },
   {
     id: 3,
-    image: underwaterAlt,
+    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800',
     date: '15 Mei 2026',
     title: 'Waktu Tanam Terbaik: Mei – Juli',
     desc: 'Periode Mei hingga Juli merupakan waktu terbaik untuk memulai budidaya rumput laut dengan hasil yang optimal.',
