@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './BudidayaList.css';
 
 export default function BudidayaList({ 
@@ -8,6 +9,8 @@ export default function BudidayaList({
   searchQuery = '',
   filterLokasi = 'Semua'
 }) {
+  const navigate = useNavigate();
+
   // Filter berdasarkan search query dan lokasi
   const filteredLocations = locations.filter(loc => {
     const matchSearch = !searchQuery || 
@@ -18,6 +21,13 @@ export default function BudidayaList({
     
     return matchSearch && matchLokasi;
   });
+
+  const handleItemClick = (id) => {
+    // Pertama highlight di map
+    onSelect(id);
+    // Langsung navigate ke detail lahan
+    navigate(`/peta/detail/${id}`);
+  };
 
   if (filteredLocations.length === 0) {
     return (
@@ -38,7 +48,7 @@ export default function BudidayaList({
           <button
             key={loc.id}
             className={`budidaya-list__item ${loc.id === activeId ? 'budidaya-list__item--active' : ''}`}
-            onClick={() => onSelect(loc.id)}
+            onClick={() => handleItemClick(loc.id)}
           >
             <div className="budidaya-list__item-image">
               {loc.foto ? (
