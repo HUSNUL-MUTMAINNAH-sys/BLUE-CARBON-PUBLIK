@@ -25,8 +25,8 @@ export default function BudidayaList({
   const handleItemClick = (id) => {
     // Pertama highlight di map
     onSelect(id);
-    // Langsung navigate ke detail lahan
-    navigate(`/peta/detail/${id}`);
+    // Langsung navigate ke detail lahan dengan route yang benar
+    navigate(`/peta/${id}`);
   };
 
   if (filteredLocations.length === 0) {
