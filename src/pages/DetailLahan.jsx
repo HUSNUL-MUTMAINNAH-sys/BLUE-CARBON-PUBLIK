@@ -168,6 +168,15 @@ export default function DetailLahan() {
             </div>
             <div className="detail-stat-card">
               <div className="stat-icon-box">
+                <Sprout size={20} strokeWidth={1.75} />
+              </div>
+              <div className="stat-body">
+                <div className="stat-label">Peran Pembudidaya</div>
+                <div className="stat-value">{lahan.jenisPelaku || '-'}</div>
+              </div>
+            </div>
+            <div className="detail-stat-card">
+              <div className="stat-icon-box">
                 <Ruler size={20} strokeWidth={1.75} />
               </div>
               <div className="stat-body">
@@ -231,17 +240,6 @@ export default function DetailLahan() {
                     <span className="info-value">{lahan.lokasi}, Kelurahan Lembang,<br/>Kecamatan Bantaeng</span>
                   </div>
                 </div>
-                {lahan.jenisPelaku && (
-                  <div className="info-row">
-                    <span className="info-icon-box">
-                      <Sprout size={18} strokeWidth={1.75} />
-                    </span>
-                    <div>
-                      <span className="info-label">Peran Pembudidaya</span>
-                      <span className="info-value">{lahan.jenisPelaku}</span>
-                    </div>
-                  </div>
-                )}
                 {lahan.akses && (
                   <div className="info-row">
                     <span className="info-icon-box">
